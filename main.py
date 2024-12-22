@@ -1,5 +1,6 @@
 #### Imports et définition des variables globales
-import random
+"""kkk"""
+
 
 FILENAME = "listes.csv"
 
@@ -15,33 +16,58 @@ def read_data(filename):
         list: le contenu du fichier (1 list par ligne)
     """
     l = []
+    with open(filename, mode='r', encoding='utf8') as f:
+        lines = f.readlines()
+        for liste in lines:
+            liste = liste.strip()
+            if liste:
+                l.append([int(x) for x in liste.split(';')])
+
+
     return l
 
 def get_list_k(data, k):
-    l = []
-    return l
+    """kkk"""
+
+    return data[k] if 0 <= k < len(data) else None
 
 def get_first(l):
-    return None
+    """lll"""
+
+
+    return l[0]
 
 def get_last(l):
-    return None
+    """kkk"""
+
+    return l[-1]
 
 def get_max(l):
-    return None
+    """dd"""
+    max_value=l[0]
+    for nombre in l :
+        max_value = max(max_value, nombre)
 
 def get_min(l):
-    return None
+    """jjj"""
+    min_value=l[0]
+    for nombre in l:
+        min_value = min(min_value, nombre)
 
 def get_sum(l):
-    return None
+    """,,,"""
+    s=0
+    for nombre in l:
+        s+=nombre
+    return s
 
 
 #### Fonction principale
 
 
 def main():
-    pass
+    """lll"""
+
     # data = read_data(FILENAME)
     # for i, l in enumerate(data):
     #     print(i, l)
